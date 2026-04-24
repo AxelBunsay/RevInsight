@@ -7,10 +7,10 @@ const {
   getProduct,
   updateProduct,
   deleteProduct
-} = require('../controllers/productController');
+} = require('../../controllers/adminControllers/productController');
 
-const { protect } = require('../middleware/adminAuth');
-const upload = require('../middleware/upload');
+const { protect } = require('../../middleware/adminAuth');
+const upload = require('../../middleware/upload');
 
 // All routes are protected
 router.post('/', protect, upload.single('image'), createProduct);

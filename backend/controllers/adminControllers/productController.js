@@ -1,4 +1,4 @@
-const Product = require('../models/product');
+const Product = require('../../models/adminModels/product');
 
 //Create 
 const createProduct = async (req, res) => {
