@@ -5,6 +5,10 @@ const userRoutes = require('./routes/user');
 const mechanicRoutes = require('./routes/mechanic');
 const adminRoutes = require('./routes/adminRoutes/admin');
 const productRoutes = require('./routes/adminRoutes/product');
+const cartRoutes = require('./routes/orderingRoutes/cart');
+const orderRoutes = require('./routes/orderingRoutes/order');
+
+
 const mongoose = require('mongoose');
 const app = express();
 
@@ -22,6 +26,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/mechanics', mechanicRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
