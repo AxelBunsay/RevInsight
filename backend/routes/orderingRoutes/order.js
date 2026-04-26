@@ -6,7 +6,10 @@ const {
   getAllOrders
 } = require('../../controllers/userControllers/orderController');
 
-router.post('/checkout', checkout);
-router.get('/', getAllOrders);
+const { authorizeRoles } = require('../../middleware/authorize');
+
+// All routes are protected for users only
+router.post('/checkout', authorizeRoles('user'), checkout);
+router.get('/', authorizeRoles('user'), getAllOrders);
 
 module.exports = router;

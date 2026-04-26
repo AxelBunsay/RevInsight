@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/user');
 const { authenticate } = require('../middleware/auth');
+const { authorizeRoles } = require('../middleware/authorize');
 const {
   validateRegister,
   validateLogin,
@@ -12,10 +13,10 @@ const {
 router.post('/register', validateRegister, userController.register);
 router.post('/login', validateLogin, userController.login);
 
-// Protected routes
-router.get('/profile', authenticate, userController.getProfile);
-router.put('/profile', authenticate, validateUpdateProfile, userController.updateProfile);
-router.get('/purchase-history', authenticate, userController.getPurchaseHistory);
-router.get('/receipts', authenticate, userController.getReceipts);
+// Protected routes (user only)
+router.get('/profile', authorizeRoles('user'), userController.getProfile);
+router.put('/profile', authorizeRoles('user'), validateUpdateProfile, userController.updateProfile);
+router.get('/purchase-history', authorizeRoles('user'), userController.getPurchaseHistory);
+router.get('/receipts', authorizeRoles('user'), userController.getReceipts);
 
 module.exports = router;
