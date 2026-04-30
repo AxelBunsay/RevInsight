@@ -40,7 +40,7 @@ adminSchema.methods.comparePassword = async function (enteredPassword) {
 //generate JWT token
 adminSchema.methods.getSignedJwtToken = function () {
   return require('jsonwebtoken').sign(
-    { id: this.id },
+    { id: this.id, role: 'admin' },
     process.env.JWT_SECRET,
     { expiresIn: process.env.JWT_EXPIRE }
   );

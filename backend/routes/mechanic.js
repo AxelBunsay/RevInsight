@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mechanicController = require('../controllers/mechanic');
 const { authenticate, adminOnly } = require('../middleware/auth');
+const { authorizeRoles } = require('../middleware/authorize');
 const {
   validateLogin,
   validateCreateMechanic,
@@ -15,7 +16,7 @@ router.post('/create', adminOnly, validateCreateMechanic, mechanicController.cre
 router.post('/login', validateLogin, mechanicController.login);
 
 // Protected routes (mechanic only)
-router.get('/profile', authenticate, mechanicController.getProfile);
-router.put('/profile', authenticate, validateUpdateMechanic, mechanicController.updateProfile);
+router.get('/profile', authorizeRoles('mechanic'), mechanicController.getProfile);
+router.put('/profile', authorizeRoles('mechanic'), validateUpdateMechanic, mechanicController.updateProfile);
 
 module.exports = router;

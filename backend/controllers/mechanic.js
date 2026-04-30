@@ -26,7 +26,7 @@ const createMechanic = async (req, res) => {
       specialization,
       yearsOfExperience,
       certifications: certifications || [],
-      createdBy: req.user.userId
+      createdBy: req.user.id
     });
 
     res.status(201).json({
