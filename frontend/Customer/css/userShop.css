@@ -1,0 +1,77 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+nav{
+  width: 100%;
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav li{
+  padding: 10px 15px;
+  margin: 0;
+}
+li button{
+  background: linear-gradient(to right, #ff842b, #ff6a00); 
+  color: white  ;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  padding: 13px 33px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+nav li.nav-links{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-left: -130px;
+}
+.Logout{
+  text-decoration: none;
+}
+
+
+.Logo{
+  display: flex;
+  gap: 7px;
+  margin-left: 20px;
+}
+.Logo h2{
+  line-height: 10px;
+  font-size: 17px;
+  font-family: sans-serif;
+  margin-left: 45px;
+  margin-bottom: -7px;
+}
+.Logo p{
+  line-height: 45px;
+  margin-left: -80px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: rgb(255, 106, 0);
+  font-size: 13px;
+}
+.Logo img{
+  margin-top: 4px;
+  height: 40px;
+  width: 24%;
+  object-fit: cover;
+  border-radius: 30%;
+  margin-right: -10px;
+}
+
+
