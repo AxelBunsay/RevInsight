@@ -28,19 +28,24 @@
       <li>
         <a href=""><i class="bi bi-cart"></i></a>
       </li>
-      <li>
-        <h4><i class="fa fa-user"></i>user</h4>
-      </li>
-      <li>
-        <a class="Logout" href=""><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+      <li class="user-menu">
+        <a href="#" class="user-toggle">
+          <h4><i class="fa fa-user"></i>user</h4>
+        </a>
+        <div class="user-dropdown">
+          <a href="#profile">Profile</a>
+          <a href="#settings">Settings</a>
+          <a href="#orders">My Orders</a>
+          <a href="#logout">Logout</a>
+        </div>
       </li>
     </ul>
   </nav>
 
   <main>
 
-    <section>
-      <div>
+    <section class="hero-section">
+      <div class="hero-content">
         <h4>MANOY'S MOTORCYCLE PARTS, ACCESSORIES & SERVICES</h4>
         <h1> Welcome, user!</h1>
         <p>Find the right parts for your ride. Quality guaranteed.</p>
@@ -52,9 +57,47 @@
       </div>
     </section>
 
+
+    <section class="products-section">
+      <div class="search-container">
+        <i class="bi bi-search"></i>
+        <input class="form-control" type="text" placeholder="Search parts, accessories...">
+
+        <select class="filter-dropdown" name="" id="">
+          <option value="">Select Price Range</option>
+          <option value="0-500">$0 - $500</option>
+          <option value="500-1000">$500 - $1000</option>
+          <option value="1000-5000">$1000 - $5000</option>
+          <option value="5000+">$5000+</option>
+        </select>
+
+      </div>
+      <div class="products">
+        <div class="product-card">
+          <img src="https://res.cloudinary.com/dcl8dksb0/image/upload/v1778335391/Screenshot_2026-05-09_220256_h68zbe.png" alt="" class="product-image">
+          <h3>Brake Pads</h3>
+          <p>$150</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://res.cloudinary.com/dcl8dksb0/image/upload/v1778335391/Screenshot_2026-05-09_220256_h68zbe.png" alt="" class="product-image">
+          <h3>Brake Pads</h3>
+          <p>$150</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://res.cloudinary.com/dcl8dksb0/image/upload/v1778335391/Screenshot_2026-05-09_220256_h68zbe.png" alt="" class="product-image">
+          <h3>Brake Pads</h3>
+          <p>$150</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 
 
+  <script src="./script/userToggle.js"></script>
 </body>
 </html>
